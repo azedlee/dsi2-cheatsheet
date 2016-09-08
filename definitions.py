@@ -1,0 +1,432 @@
+### Definitions
+#=====================================================================================================
+## Correlation (matrix) vs Covariance (matrix)
+# Correlation (matrix)
+"""
+
+"""
+# Covariance (matrix)
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Pearson vs Spearman vs Kendall
+# Pearson
+"""
+
+"""
+# Spearman
+"""
+
+"""
+# Kendall
+"""
+
+"""
+
+#-----------------------------------------------------------------------------------------------------
+
+
+# Machine Learning Models
+# What is it?
+"""
+
+"""
+# Linear Regression
+"""
+
+"""
+# Logistic Regression
+"""
+
+"""
+# K-Nearest Neighbors
+"""
+
+"""
+# Support Vector Machines
+"""
+
+"""
+# CARTs (Decision Trees)
+"""
+
+"""
+# Random Forests (Bagging and Boosting)
+"""
+
+"""
+# LDA
+"""
+
+"""
+# Clustering k-Means
+"""
+
+"""
+# Principal Component Analysis (PCA)
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Bias vs Variance
+# What is it?
+"""
+Bias - I've accepted that my model will not perfectly model the dataset.
+"""
+# Linear Regression
+"""
+
+"""
+# Logistic Regression
+"""
+
+"""
+# K-Nearest Neighbors
+"""
+
+"""
+# Support Vector Machines
+"""
+
+"""
+# CARTs (Decision Trees)
+"""
+
+"""
+# Random Forests (Bagging and Boosting)
+"""
+
+"""
+# LDA
+"""
+
+"""
+# Clustering k-Means
+"""
+
+"""
+# Principal Component Analysis (PCA)
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Confidence Interval vs P-Value vs Bootstrapping
+# Confidence Interval
+"""
+
+"""
+# P-Value
+"""
+
+"""
+# Bootstrapping
+"""
+
+"""
+# How does it all come together?
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Law of Large Numbers, Central Limit Theorem, t-tests, Bayesian vs Frequentist
+# Law of Large Numbers
+"""
+Performing the same experiment a large number of times and taking the average of the results will 
+result in a convergence to the true expected value of the experiment.
+"""
+# Central Limit Theorem
+"""
+In probability theory, the central limit theorem (CLT) states that, given certain conditions, 
+the arithmetic mean of a sufficiently large number of iterates of independent random variables, 
+each with a well-defined (finite) expected value and finite variance, will be approximately
+normally distributed, regardless of the underlying distribution.
+"""
+# T-tests
+"""
+
+"""
+# Bayesian vs Frequentist
+"""
+Bayesian - P(true mean|data)
+I have collected fixed data which I use to update my inference of the probability, 
+which is called my posterior distribution
+Thus, there is a distribution of values for the true mean variable with varying probability.
+
+Frequentist - P(data|true mean)
+The mean variable is an unknown but fixed, "true" value.
+Our data sampled is random, but the true value is fixed across all hypothetical samples.
+There is a distribution of possible samples given the true fixed value.
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Confusion Matrix(TP, FP, TN, FN), Precision, Recall, Accuracy, Misclassification Rate, Precision-Recall
+# Confusion Matrix
+"""
+
+"""
+# Precision - TP / (TP + FP)
+"""
+When the model predicts yes, how often is it correct
+"""
+# Recall - TP / (TP + FN)
+"""
+How often the model predicts yes, and it is actually yes
+"""
+# Accuracy - (TP + TN) / n
+"""
+How often is the classifier model correct
+"""
+# Misclassification Rate (Error Rate) - (FP + FN) / n
+"""
+How often is the classifier model wrong
+"""
+# Precision-Recall
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Baseline Accuracy/Model, R^2, ROC Curve, Cross Validation, Support Vectory Machine - Kernel Trick
+# Baseline Accuracy/Model
+"""
+
+"""
+# R^2
+"""
+
+"""
+# ROC Curve
+"""
+
+"""
+# Cross Validation
+"""
+
+"""
+# Support Vector Machine - Kernel Trick
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Ordinary Least Squares Regression, Residual Sum of Squares, Total Sum of Squares
+# Ordinary Least Squares Regression (OLS)
+"""
+
+"""
+# Residual Sum of Squares
+"""
+
+"""
+# Total Sum of Squares
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## Normalization (Min-Max Scaling) vs Standardization (z-score), Feature Scaling, Loss Function
+# Normalizataion
+"""
+
+"""
+# Standardization
+"""
+
+"""
+# Feature Scaling
+"""
+
+"""
+# Loss Function
+"""
+The loss function is what is being optimized by the process of regression. 
+Think of the term "loss function" sort of like the greater the value, 
+the more information about your target variable that is "lost" by your model.
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## APIs, OAuth
+# APIs
+"""
+
+"""
+# OAuth
+"""
+A secure authorization protocol that deals with the authorizaiton of third party application
+to access the user data without exposing their password. For example, many websites have 
+facebook/google/etc... login alternatives. If you choose to log into a site using your facebook
+account, facebook will ask for a token, or OAuth, that re-directs you to a confirmation page that
+this other "app" or "website" is allowed to use your facebook information. Once confirmed, it re-directs
+you back to the "app" or "website" and authorizes you with facebook's OAuth/token and then
+you may log into that "app" or "website".
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## SQL - Normalized and Denormalized data, Cartesian Product
+# Normalized
+"""
+Normalized structures have a single table per entity, and use many foreign keys or link tables 
+to connect the entities.
+"""
+# Denormalized
+"""
+Denormalized have fewer tables and may (for example) place all of the tweets and the
+information on users in one table.
+"""
+# What are the pros and cons?
+"""
+Normalized tables save the storage space by separating the information. However, if we need to access
+information between 2 tables, we will need to the join the tables, which is a much slower process, since
+we have to write SQL code to access the information.
+Denormalized tables duplicate a lot of information. Without writing any SQL code, you can access all
+all information 1 single table.
+For example, in our combined tweets/users table, we may store the address of each user, which is normalized. 
+Now instead of storing this once per user, we are storing this once per tweet, which is denormalized.
+"""
+# Cartesian Product
+"""
+Also referred to as a cross-join, returns all the rows in all the tables listed in the query. 
+Each row in the first table is paired with all the rows in the second table. This happens when 
+there is no relationship defined between the two tables.
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+## Bagging, Boosting
+# Bagging
+"""
+
+"""
+# Boosting
+"""
+
+"""
+# Extremely Randomized Trees
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+## NLP (Natural Language Processing)
+# Tokenization/Vectorization
+"""
+
+"""
+# Hashing Vectorizer
+"""
+Used for Big Data, not necessarily used for smaller/medium datasets
+"""
+## Preprocessing Techniques
+# NLP Bag of Words
+"""
+Bag of word approaches like the one outlined before completely ignores the structure of a sentence.
+Ex.
+  There's wood floating in the sea
+  Mike's in a sea of trouble with the move
+"""
+# Segmentation
+"""
+Segmentation is a technique to identify sentences within a body of text. 
+Language is not a continuous uninterrupted stream of words: punctuation serves as a guide to group 
+together words that convey meaning when contiguous.
+"""
+# Normalization
+"""
+When slightly different versions of a word exist.
+For example: LinkedIn sees 6000+ variations of the title "Software Engineer" and 8000+ variations of the word "IBM".
+"""
+# Stemming
+"""
+It would be wrong to consider the words "MR." and "mr" to be different features, thus we need a technique 
+to normalize words to a common root. This technique is called Stemming.
+Other Examples
+  Science, Scientist => Scien
+  Swimming, Swimmer, Swim => Swim
+"""
+# TFIDF
+"""
+More interesting than stop-words is the tf-idf score. This tells us which words are most discriminating between 
+documents. Words that occur a lot in one document but doesn't occur in many documents will tell you something 
+special about the document.
+
+  - This weight is a statistical measure used to evaluate how important a word is to a document in 
+    a collection (aka corpus)
+  - The importance increases proportionally to the number of times a word appears in the document 
+    but is offset by the frequency of the word in the corpus.
+"""
+# Porter vs Snowball(Porter2) vs Lancaster
+"""
+At the very basics of it, the major difference between the porter and lancaster stemming algorithms is 
+that the lancaster stemmer is significantly more aggressive than the porter stemmer. The three major 
+stemming algorithms in use today are Porter, Snowball(Porter2), and Lancaster (Paice-Husk), with the 
+aggressiveness continuum basically following along those same lines. Porter is the least aggressive 
+algorithm, with the specifics of each algorithm actually being fairly lengthy and technical. Here is a 
+break down for you though:
+
+Porter: Most commonly used stemmer without a doubt, also one of the most gentle stemmers. One of the 
+few stemmers that actually has Java support which is a plus, though it is also the most computationally 
+intensive of the algorithms(Granted not by a very significant margin). It is also the oldest stemming 
+algorithm by a large margin.
+
+Porter2: Nearly universally regarded as an improvement over porter, and for good reason. Porter himself 
+in fact admits that it is better than his original algorithm. Slightly faster computation time than 
+porter, with a fairly large community around it.
+
+Lancaster: Very aggressive stemming algorithm, sometimes to a fault. With porter and snowball, the stemmed 
+representations are usually fairly intuitive to a reader, not so with Lancaster, as many shorter words will 
+become totally obfuscated. The fastest algorithm here, and will reduce your working set of words hugely, but 
+if you want more distinction, not the tool you would want.
+
+Honestly, I feel that Snowball is usually the way to go. There are certain circumstances in which Lancaster 
+will hugely trim down your working set, which can be very useful, however the marginal speed increase over 
+snowball in my opinion is not worth the lack of precision. Porter has the most implementations though and 
+so is usually the default go-to algorithm, but if you can, use snowball.
+"""
+# LDA
+"""
+Topics generated from an LDA model are actually a cluster of word probabilities, not clearly defined labels.
+Simplifying word vectors like this, should give you a sense about the intuition of how words vectors relate to topics.
+Kind of like KNN but we are deciding, up front, on a preset number of topics.
+"""
+#=====================================================================================================
+
+
+

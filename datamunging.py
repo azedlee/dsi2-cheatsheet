@@ -47,6 +47,8 @@ new_df = pd.DataFrame[data=df, columns=update_columns]
 # Drop rows with NaN values
 df.dropna()
 df['col1'].dropna()
+# Drops NaN from ONLY col1
+df = df.dropna(subset=['col1'])
 
 # Edit NaN Values
 df.fillna('new_value')
@@ -77,6 +79,18 @@ df.drop([c for c in df.columns if c.startswith('objective')], axis=1, inplace=Tr
 .iloc - indexes with the integer positions for rows and columns
 .ix - indexes with both lebals and integer positions
 """
+
+# Removing HTML tags
+import re
+
+def remove_html(x):
+    clean_html = re.compile('<.*?>')
+    try:
+        cleaned = re.sub(clean_html, '', x)
+        return cleaned
+    except:
+        return x
+
 
 ## Pivot Tables - Long to Wide
 df_wide = pd.pivot_table(df_long, # The Data frame you want to convert

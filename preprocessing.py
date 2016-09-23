@@ -252,6 +252,8 @@ Swim
 
 # Stop words are to remove words that are very common and provide no information on text content
 from nltk.corpus import stopwords
+import sklearn
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 stop = stopwords.words('english')
 sentence = "this is a foo bar sentence"
 print [i for i in sentence.split() if i not in stop]

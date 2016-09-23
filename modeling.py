@@ -9,11 +9,13 @@
                 #                         |   Support Vector Machine   #
                 #                         |       Decision Tree        #
                 #                         |      Ensemble Methods      #
+                #                         |        Naive Bayes         #
                 #======================================================#
-                #          LDA            |          K-Means           #
-                #          PCA            |       Hierarchical         #
+                #          PCA            |          K-Means           #
+                #          LDA            |       Hierarchical         #
 # Unsupervised  #                         |          DBSCAN            #
-                #                         |                            #
+                #                         |     Sentiment Analysis     #
+                #                         |          Optics            #
                 ########################################################
 
 
@@ -355,6 +357,10 @@ documents = [doc_a, doc_b, doc_c, doc_d, doc_e]
 # Fit the documents into a count vectorizer (TFIVectorizer)
 vectorizer = CountVectorizer(stop_words='english')
 X = vectorizer.fit_transform(documents)
+
+# Prints all the word and the number of counts
+[(word, count) for word, count in vectorizer.vocabulary_.items()]
+
 X.todense()
 
 docs = pd.DataFrame(X.toarray(), columns=vectorizer.get_feature_names())
@@ -505,6 +511,35 @@ for tick in ax.yaxis.get_major_ticks():
 ax.set_title('component vs cumulative variance explained\n', fontsize=20)
 
 plt.show()
+
+
+#<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+
+## Sentiment Analysis
+
+
+## DBSCAN
+
+
+## pymc3
+import pymc3 as pymc3
+
+with pm.Model() as model:
+
+	mean_belief = pm.Normal('mean_belief', mu=20, sd=5)
+	std_belief = pm.Uniform('std_belief', lower=0.001, upper=10000)
+
+	data = pm.Normal('data', mu=mean_belief, sd=std_belief, observed=df)
+
+with model:
+	trace = pm.sample(10000, njobs=4)
+
+plt.figure(figsize=(7,7))
+pm.traceplot(trace)
+plt.tight_layout()
+
+
 #=====================================================================================================
 
 

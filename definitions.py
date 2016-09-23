@@ -72,6 +72,22 @@
 """
 
 """
+# Hierarchical Clustering
+"""
+
+"""
+# Sentiment Analysis
+"""
+
+"""
+# DBSCAN (Density-based spatial clustering of applications with noise)
+"""
+Similar to K-Nearest Neighbors, DBSCAN picks neighbors that are close by based on the user's
+parameters of eps and min_sample. EPS is the max euclidean distance between points and
+min_sample is the minimum number of neighbors for a point to be defined as a core sample.
+This is the preferred method of clustering because outliers are not forced into clusters,
+rather labelled as outliers.
+"""
 
 
 #-----------------------------------------------------------------------------------------------------
@@ -81,6 +97,7 @@
 # What is it?
 """
 Bias - I've accepted that my model will not perfectly model the dataset.
+Variance - I will try to account for all the data points in my current "sample/training" set.
 """
 # Linear Regression
 """
@@ -105,16 +122,6 @@ Bias - I've accepted that my model will not perfectly model the dataset.
 # Random Forests (Bagging and Boosting)
 """
 
-"""
-# LDA
-"""
-
-"""
-# Clustering k-Means
-"""
-
-"""
-# Principal Component Analysis (PCA)
 """
 
 """
@@ -158,6 +165,11 @@ the arithmetic mean of a sufficiently large number of iterates of independent ra
 each with a well-defined (finite) expected value and finite variance, will be approximately
 normally distributed, regardless of the underlying distribution.
 """
+# Z-Test
+"""
+Based on z-score, is the probability higher or lower than the null hypothesis p-value.
+Two-tailed can be shifted to left or right, testing whether the hypothesis is not fair.
+"""
 # T-tests
 """
 
@@ -166,13 +178,20 @@ normally distributed, regardless of the underlying distribution.
 """
 Bayesian - P(true mean|data)
 I have collected fixed data which I use to update my inference of the probability, 
-which is called my posterior distribution
-Thus, there is a distribution of values for the true mean variable with varying probability.
+which is called my posterior distribution.
+The data informs us about the distribution, and as we receive more data, our view of 
+the distribution can be updated, further confirming or denying our previous beliefs
+(but never in certainty).
 
 Frequentist - P(data|true mean)
-The mean variable is an unknown but fixed, "true" value.
+The "true" distribution is fixed (and not known).
 Our data sampled is random, but the true value is fixed across all hypothetical samples.
 There is a distribution of possible samples given the true fixed value.
+
+Frequentist believes that there is a true distribution somewhere out there and the data is 
+just a possible sample of it. Bayesian is the opposite. Bayesian believes that the data informs
+us about the true distribution and the more data we can get, the more we can update the
+distribution. However, we will never know the true distribution.
 """
 
 
@@ -288,9 +307,9 @@ A secure authorization protocol that deals with the authorizaiton of third party
 to access the user data without exposing their password. For example, many websites have 
 facebook/google/etc... login alternatives. If you choose to log into a site using your facebook
 account, facebook will ask for a token, or OAuth, that re-directs you to a confirmation page that
-this other "app" or "website" is allowed to use your facebook information. Once confirmed, it re-directs
-you back to the "app" or "website" and authorizes you with facebook's OAuth/token and then
-you may log into that "app" or "website".
+this other app or website is allowed to use your facebook information. Once confirmed, it re-directs
+you back to the app or website and authorizes you with facebooks OAuth/token and then
+you may log into that app or website.
 """
 
 
@@ -359,8 +378,8 @@ Used for Big Data, not necessarily used for smaller/medium datasets
 """
 Bag of word approaches like the one outlined before completely ignores the structure of a sentence.
 Ex.
-  There's wood floating in the sea
-  Mike's in a sea of trouble with the move
+  Theres wood floating in the sea
+  Mikes in a sea of trouble with the move
 """
 # Segmentation
 """
@@ -426,7 +445,108 @@ Topics generated from an LDA model are actually a cluster of word probabilities,
 Simplifying word vectors like this, should give you a sense about the intuition of how words vectors relate to topics.
 Kind of like KNN but we are deciding, up front, on a preset number of topics.
 """
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+# Bayes
+"""
+
+"""
+# pymc3
+"""
+
+"""
+# Markov Chain Monte Carlo (MCMC)
+"""
+
+"""
+# Bayes Regression
+"""
+
+"""
+
+
+#-----------------------------------------------------------------------------------------------------
+
+# Big Data
+"""
+3 Vs: Volume (large amounts of data), Variety (different types of structured, unstructured and multi-structured data),
+Velocity (needs to be analyzed quickly).
+Daves 4th V: Value (assess the value of the data, understanding the underpinnings of cost vs benefit)
+
+Parallelism: The foundation of Big Data computing - the idea of using multiple computers to compute and solve a problem.
+			This allows many resources to be used in parallel. Another way to explain parallelism is divide and conquer,
+			which is to break down a task into independent subtasks.
+
+Map Reduce: Invented and publicized by Google in 2004. Map Reduce is a 2-phase Divide and Conquer. The first mapper phase
+			splits the data into chunks and the same computation is performed on each chunk. The reducer phase aggregates
+			the data back together to produce a final result.
+			
+			Map-reduce uses a functional programming paradigm. The data processing primitives are mappers and reducers.
+			mappers - filter & transform data
+			reducers - aggregate results
+
+			INPUT DATA -> SPLIT -> MAP -> COMBINE -> SHUFFLE & SORT -> REDUCE -> OUTPUT DATA
+			
+			SPLIT 			- split into chunks of data
+			MAP 			- tokenization
+			COMBINE 		- local group by after map phase
+			SHUFFLE & SORT  - organize the combined data evenly and sort them
+			REDUCE 			- aggregate the results/group by
+
+			**Once shuffle is 70% done, it will start reducer phase**
+"""
+# Hadoop
+"""
+Hadoop is a data processing framework and a distributed file system (HDFS - Hadoop Distributed File System). Hadoop stores
+very large amounts of data in clusters/buckets, but they are not databases. You cannot write queries to get specific
+information from the data. Thats why it needs a data processing framework called MapReduce to run analysis on it.
+"""
+# Hive
+"""
+Hive is a data warehouse infrastructure built on top of Hadoop for data summarization, query, and analysis. 
+Hive gives an SQL-like interface to query data stored in Hadoop. Although the commands are not exactly the same as SQL
+databases, they are very similar. Knowing SQL commands can get you quickly acquianted with Hive.
+"""
+# Spark
+"""
+Does SQL, MapReduce, Machine Learning, Graphing through Hadoop.
+The 2 pillars on which Spark is based are RDDs (Resilient Distributed Datasets) and DAGs (Directed Acyclic Graphs), which
+are dataframes and decision tree style MapReduce.
+1. DAG (MapReduce) - Automatically counts the number to clusters for you. Map() -> Sort/Shuffle -> Reduce()/Aggregation
+   Spark also uses a decision tree style MapReduce, which does parallel computation.
+   Spark uses RAM instead of harddrives, which makes the job 10-100x faster.
+
+2. Features that are developed and released in Spark, are first available through the Scala implementation of Spark libraries.
+   **Learn Scala aside from Python and R as a 3rd language**
+
+3. Spark provides 2 forms of shared variables
+   - Broadcast variables: they reference read-only data that needs to be available on all nodes
+   - Accumulators: they can be used to program reductions in an imperative style
+
+4. Spark provides two types of operations:
+   - Transformations: these are lazy operations that only return a result upon collect
+   - Actions: these are non-lazy operations that immediately return a result
+
+   Using lazy operations, we can build a computation graph that only gets executed when we collect the result.
+   This allows Spark to optimize the requested calculation by optimizing the underlying DAG of operations.
+
+"""
+
+
 #=====================================================================================================
 
 
 
+### Interview Questions
+#=====================================================================================================
+
+
+
+# http://www.kdnuggets.com/2016/02/21-data-science-interview-questions-answers.html
+
+
+
+#=====================================================================================================

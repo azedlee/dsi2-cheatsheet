@@ -153,3 +153,35 @@ new_df = pd.merge(df1, df2, on='Id', how='right')
 # Multiple merges in 1 line
 new_df = df1.merge(df2, on='Id', how='left').merge(df3, on='Name', how='inner').merge(df4, on='Password', how='outer')
 #=====================================================================================================
+
+
+
+
+
+
+
+
+
+### Time Series
+#=====================================================================================================
+
+# Convert to datetime
+pd.to_datetime(Feature)
+
+# Make index the date
+df.index = df['date']
+
+from datetime import datetime
+
+# Time this lesson plan was written
+# Year, Month, Date, Hour, Minute, Second, Micro-Second
+lesson_date = datetime(2016, 3, 5, 23, 31, 1, 844089)
+
+# Output date time variables
+lesson_date.day, lesson_date.month, lesson_date.year, lesson_date.hour
+
+# Prints the datetime of what is happening
+datetime.now()
+
+
+#=====================================================================================================

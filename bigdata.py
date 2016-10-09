@@ -319,18 +319,17 @@ ssh -i ~/.ssh/ssh_file.pem -L 18888:127.0.0.1:8888 ubuntu@'Public DNS'
 chmod 600 ~/.ssh/ssh_file.pem
 
 # Setting up AWS server on ubuntu
-1  sudo apt-get install python-2.7
-2  sudo apt-get install anaconda
-3  sudo apt-get install pip
-4  sudo apt-get update
-5  sudo apt-get install python-pip
-6  history
-7  sudo pip install jupyter pandas
-8  pip install --upgrade pip
-9  sudo pip install --upgrade pip
-10  sudo pip install jupyter
-11  sudo pip install pandas
-12  history
+5  sudo apt-get update
+    6  sudo apt-get install python-pip
+    7  history
+    8  sudo apt-get install python-2.7
+    9  sudo apt-get install anaconda
+   10  pip install upgrade pip
+   11  sudo pip install --upgrade pip
+   12  sudo pip install sklearn
+   13  sudo pip install pandas
+   14  sudo pip install numpy
+   15  sudo pip install cPickle
 
 jupyter notebook --ip='*'
 

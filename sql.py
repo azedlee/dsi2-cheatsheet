@@ -22,6 +22,8 @@ pd.read_sql(sql)
 ## SQL commands
 # Explanation
 """"
+SHOW TABLES - Shows all tables within a database
+DESCRIBE - Shows all fields within a table
 CREATE TABLE - Create a new table
 INSERT INTO - Insert a new row into a table
 DELETE - Delete a row

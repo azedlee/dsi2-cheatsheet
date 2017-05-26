@@ -41,7 +41,9 @@ df.rename(columns={'col1':'new_col1', 'col2':'new_col2'}, inplace=True)
 
 # Another way
 update_columns = ['new_col1', 'new_col2']
-new_df = pd.DataFrame[data=df, columns=update_columns]
+df.columns = update_columns
+# or
+new_df = pd.DataFrame(data=df, columns=update_columns)
 
 ## Drop/Edit Nan Values
 # Drop rows with NaN values
